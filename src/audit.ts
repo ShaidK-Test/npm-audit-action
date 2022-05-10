@@ -30,7 +30,7 @@ export class Audit {
         auditOptions.push('--json')
       }
 
-      const result: SpawnSyncReturns<string> = spawnSync(isWindowsEnvironment, auditOptions, {
+      const result: SpawnSyncReturns<string> = spawnSync(cmd, auditOptions, {
         encoding: 'utf-8',
         maxBuffer: SPAWN_PROCESS_BUFFER_SIZE
       })
