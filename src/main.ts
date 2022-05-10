@@ -7,7 +7,7 @@ import * as issue from './issue'
 import * as pr from './pr'
 import * as workdir from './workdir'
 
-export async function run(): Promise<void> {
+export async function run(): Promise<void> { 
   try {
     // move to working directory
     const workingDirectory = core.getInput('working_directory')
