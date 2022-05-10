@@ -16,7 +16,7 @@ export class Audit {
       const auditOptions: Array<string> = ['audit', '--audit-level', auditLevel]
       
       const isWindowsEnvironment: boolean = process.platform === "win32";
-      let cmd: string = (isWindowsEnvironment) ? 'npm.cmd' : 'npm';
+      const cmd: string = (isWindowsEnvironment) ? 'npm.cmd' : 'npm';
 
       if (productionFlag === 'true') {
         auditOptions.push('--production')
