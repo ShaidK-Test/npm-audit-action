@@ -22,7 +22,7 @@ class Audit {
     run(auditLevel, productionFlag, jsonFlag) {
         try {
             var isWindowsEnvironment = process.platform === "win32";
-            if (windowsEnvironment) {
+            if (isWindowsEnvironment) {
                 var cmd = 'npm.cmd'
             } else {
                 var cmd = 'npm'
