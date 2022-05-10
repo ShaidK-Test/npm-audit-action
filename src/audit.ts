@@ -15,11 +15,11 @@ export class Audit {
     try {
       const auditOptions: Array<string> = ['audit', '--audit-level', auditLevel]
       
-      var isWindowsEnvironment = process.platform === "win32";
+      let isWindowsEnvironment = process.platform === "win32";
       if (isWindowsEnvironment) {
-          var cmd = 'npm.cmd'
+          let cmd = 'npm.cmd'
       } else {
-          var cmd = 'npm'
+          let cmd = 'npm'
       }
 
       if (productionFlag === 'true') {
