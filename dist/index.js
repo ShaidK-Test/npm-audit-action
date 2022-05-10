@@ -22,11 +22,7 @@ class Audit {
     run(auditLevel, productionFlag, jsonFlag) {
         try {
             var isWindowsEnvironment = process.platform === "win32";
-            if (isWindowsEnvironment) {
-                var cmd = 'npm.cmd'
-            } else {
-                var cmd = 'npm'
-            }
+            var cmd = (isWindowsEnvironment) ? 'npm.cmd' : 'npm';
           
             const auditOptions = ['audit', '--audit-level', auditLevel];
             if (productionFlag === 'true') {
