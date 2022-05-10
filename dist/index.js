@@ -21,6 +21,13 @@ class Audit {
     }
     run(auditLevel, productionFlag, jsonFlag) {
         try {
+            var isWindowsEnvironment = process.platform === "win32";
+            if (windowsEnvironment) {
+                var cmd = 'npm.cmd'
+            } else {
+                var cmd = 'npm'
+            }
+          
             const auditOptions = ['audit', '--audit-level', auditLevel];
             if (productionFlag === 'true') {
                 auditOptions.push('--production');
@@ -28,7 +35,7 @@ class Audit {
             if (jsonFlag === 'true') {
                 auditOptions.push('--json');
             }
-            const result = child_process_1.spawnSync('npm', auditOptions, {
+            const result = child_process_1.spawnSync(cmd, auditOptions, {
                 encoding: 'utf-8',
                 maxBuffer: SPAWN_PROCESS_BUFFER_SIZE
             });
