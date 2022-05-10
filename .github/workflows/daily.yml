@@ -1,8 +1,9 @@
 name: daily scan
 
-on:
-  schedule:
-    - cron: '0 20 * * *'
+on: # rebuild any PRs and main branch changes
+  push:
+    branches:
+      - main
 
 jobs:
   scan:
