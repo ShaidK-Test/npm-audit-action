@@ -19,9 +19,9 @@ export class Audit {
       let cmd: string;
       
       if (isWindowsEnvironment) {
-          let cmd: string = 'npm.cmd';
+          cmd: string = 'npm.cmd';
       } else {
-          let cmd: string = 'npm';
+          cmd: string = 'npm';
       }
 
       if (productionFlag === 'true') {
